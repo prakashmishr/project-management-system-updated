@@ -1,0 +1,43 @@
+<%- include("partials/teacherHeader.ejs") %> 
+
+
+  <div style="margin-left: 300px;">
+    <h2 style="font-size: 18px;color: rgb(0, 0, 0); margin-top: 5%; font-weight: 700;"> Student Requests </h2>
+    <table id="example1" class="table table-bordered table-striped" style="margin-top: 10px;">
+      <thead>
+        <tr>
+          <th>Team Name</th>
+          <th>view Details</th>
+          <th>Problem Statement</th>
+          <th>Domain</th>
+          <th>Approval</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% requests.forEach((req)=>{ %>
+        <tr>
+
+          <% if ( req.reqType === 1) { %>
+          <td style="color: blue;"><%=req.teamName%> </td>
+
+          <form action="/viewDetail" method="post">
+            <td>
+              <input type="hidden" name="leaderId" value="<%=req.leaderId%>">
+              <input type="hidden" name="leadd" value="j">
+              <button type="submit" style="font-size:14px"><i class="fa fa-eye"></i>View </button></a></td>
+          </form>
+          <td><%= req.pt %> </td>
+          <td><%= req.pd %> </td>
+          <td> Approved
+          </td>
+
+        </tr>
+        <% } %>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>

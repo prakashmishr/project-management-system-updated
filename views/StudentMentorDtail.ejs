@@ -1,0 +1,39 @@
+<%- include("partials/studentHeader.ejs") %> 
+
+  <div style="margin-left: 300px;">
+    <h2 style="font-size: 18px;color: rgb(0, 0, 0); margin-top: 5%; font-weight: 700;"> View Mentor(s) Details </h2>
+    <% if(msg){ %> 
+      <h1><%= msg %> </h1>
+      
+      <% } %> 
+    <table id="example1" class="table table-bordered table-striped" style="margin-top: 10px;">
+      <thead>
+        <tr>
+          <!-- <th> Mr/Mrs </th> -->
+          <th>Mentor Name</th>
+          <th>Mentor Email</th>
+          <th>Mentor Phone</th>
+          <th>Apply</th>
+        </tr>
+      </thead>
+      <% if(mentor){ %>
+      <tbody>
+        <% mentor.forEach(function(teacher){ %>
+        <tr>
+          <td><%- teacher.userName%>  </td>
+          <td><%- teacher.userEmail%> </td>
+          <td><%- teacher.userContactNo%> </td>
+          <td><a href="/apply">Apply</a></td>
+        </tr>
+        <% }) %>
+        <!-- <td> Mr.</td> -->
+      </tbody>
+    </table>
+    <% }else{ %>
+    <h5>No Mentor Found!</h5>
+    <% } %>
+  </div>>
+
+</body>
+
+</html>

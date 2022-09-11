@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <title>Responsive Sidebar Menu</title> -->
+    <link rel="stylesheet" href="/css/StudentTeamDetail.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>  
+        
+        /*.dropbtn {  
+            background-color: yellow;  
+            color: black;  
+            padding: 10px;  
+            font-size: 12px;  
+        }  '
+        */
+        .dropdown {  
+            display: inline-block;  
+            position: relative ;
+          
+        }  
+        .dropdown-content {  
+            position: absolute ;
+            right:2px; 
+            background-color: rgb(255, 255, 255);  
+            border:5px solid white;
+            min-width: 200px;  
+            display: none;  
+            z-index: 1;  
+        }  
+        .dropdown-content a {  
+            color: black;  
+            padding: 5px 9px;  
+            text-decoration: none;  
+            display: block; 
+        }  
+        .dropdown-content a:hover {  
+            background-color: rgb(222, 222, 222);  
+        }  
+        .dropdown:hover .dropdown-content {  
+            display: block;  
+        }  
+        .dropdown:hover .dropbtn {  
+            background-color: grey;  
+        }  
+        #example1{
+            border-left:10px solid rgb(255, 255, 255);
+            border-right:10px solid rgb(255, 255, 255);
+            border-top:30px solid rgb(255, 255, 255);
+            border-bottom:30px solid rgb(255, 255, 255);
+            box-shadow: -1px 4px 6px 3px rgb(172, 172, 172);
+        }
+        </style> 
+  <link rel="stylesheet" href="Mystle.css">
+  <link rel="stylesheet" href="registercss.css">
+
+  </head>
+  <body style="background-color: rgb(234, 234, 234);">
+
+
+    <header class=" bg-white text-gray-600 body-font sticky top-0 z-50 h-12" >
+        <div class="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center ">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8 text-white p-2 bg-orange-500 squared-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                  </svg>
+              <span class="ml-3 text-xs text-black">PMS</span>
+            </a>
+            <nav class="text-black md:ml-auto flex flex-wrap items-center text-base justify-center">
+              
+                
+                <div class="dropdown">  
+                    <button class="dropbtn"> <img src="download.jpg" width="30" height="60" > </button>  
+                    <div class="dropdown-content">  
+                    <a href="#"> Reset Password </a>  
+                    <a href="/logout"> Log Out </a>   
+                    </div>  
+                    </div>  
+              
+            </nav>
+          </div>
+      </header>
+
+      <input type="checkbox" id="check">
+      <label for="check" style="position: fixed ;">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+      </label>
+   
+    <div class="sidebar">
+      <header>My Menu</header>
+      <a href="teacherhome" class="active">
+        <i class="fas fa-link"></i>
+        <span>Home</span>
+      </a>
+      <!-- <a href="TeaacherStuProjectStatus">
+        <i class="fas fa-calendar"></i>
+       <span>Project Status</span>
+     </a> -->
+     <a href="TeacherStuRequest">
+      <i class="fas fa-times"></i>
+      <span>Guidance Request</span>
+    </a>
+      <a href="TeacherStuProDetail">
+        <i class="fas fa-stream"></i>
+        <span>View Project Detail</span>
+      </a>
+      <a href="#">
+        <i class="far fa-question-circle"></i>
+        <span>About</span>
+      </a>
+      <a href="#">
+        <i class="far fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </div>

@@ -1,0 +1,78 @@
+<%- include("partials/studentHeader.ejs") %> 
+  <div style="margin-left: 300px; display: inline-block; ">
+    <h1 style="font-size: 37px;color: rgb(51, 51, 51); margin-top: 18%; font-weight: 700;">Team Detail</h1>
+    <div id="grad1" style="color: white;font-size: 21px; background: linear-gradient( #6aadff,#0051ff);">
+      <h3><b>Email ID</b></h3>
+      <p style="margin-top: 10px; font-size: 16px;"><%= user.userEmail %> %> </p>
+    </div>
+  </div>
+  <div style="margin-left: 30px; display: inline-block; ">
+
+    <div id="grad1" style="color: white;font-size: 21px;background: linear-gradient(#0ba70354, #19a809e0);">
+      <h3><b>Team Leader Name</b></h3>
+      <p style="margin-top: 10px; font-size: 16px;"><%- user.userName %> </p>
+    </div>
+  </div>
+  <div style="margin-left: 30px; display: inline-block; ">
+    <div id="grad1" style="color: white;font-size: 21px; background: linear-gradient(#702ec254, #5600a1);">
+      <h3><b>College Name</b></h3>
+      <p style="margin-top: 10px; font-size: 16px;"><%- user.userCollegeName %></p>
+    </div>
+  </div>
+  <div style="margin-left: 30px; display: inline-block; ">
+    <div id="grad1" style="color: white;font-size: 21px; background: linear-gradient(#6aadff,#0051ff);">
+      <h3><b>Project Title : </b></h3>
+      <% if(false) {%>
+      <p style="margin-top: 10px; font-size: 16px;"><%- user.userContactNo %> </p>
+      <% }else{ %>
+      <p style="margin-top: 10px; font-size: 16px;">No project yet </p>
+      <% } %>
+    </div>
+  </div>
+
+
+
+  <div style="margin-left: 300px;">
+    <h2 style="font-size: 18px;color: rgb(92, 56, 186); margin-top: 5%; font-weight: 700;"> Team Members </h2>
+    <!-- member details============================ -->
+    <% if(member) {%>
+    <table id="example1" class="table table-bordered table-striped" style="margin-top: 10px;">
+      <thead>
+        <tr>
+          <th>Member Role</th>
+          <th>Member Name</th>
+          <th>Member Email</th>
+          <th>Member Phone</th>
+          <th>Member Roll No.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% member.forEach(function(person){ %>
+        <tr>
+          <td>Team Member</td>
+          <td><%- person.userName %> </td>
+          <td><%- person.userEmail %></td>
+          <td><%- person.userContactNo %></td>
+          <td><%- person.userUniversityRollNo %></td>
+        </tr>
+
+        <% }) %>
+
+
+
+
+      </tbody>
+    </table>
+
+    <h4><a href="teamRegister">click here to Add Member</a></h4>
+  </div>
+  <% }else { %>
+  <h1>No Team Found</h1>
+  <p>please registered your team</p>
+  <h4><a href="teamRegister">click here to Add Member</a></h4>
+  <strong><% if(err) %> </strong>
+  <%- err %>
+  <% }%>
+</body>
+
+</html>

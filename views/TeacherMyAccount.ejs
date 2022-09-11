@@ -1,0 +1,28 @@
+<%- include("partials/teacherHeader.ejs") %> 
+
+    <div style="margin-left: 300px;">
+        <h2 style="font-size: 18px;color: rgb(0, 0, 0); margin-top: 5%; font-weight: 700;"> View Profile Details </h2>
+        <table id="example1" class="table table-bordered table-striped" style="margin-top: 10px;">
+         <thead>
+           <tr>
+             <th>Your Name</th>
+             <th>Your Email</th>
+             <th>Your Phone</th>
+             <th>Teaching Domain</th>
+             <th>Teacher ID</th>
+           </tr>
+         </thead>
+         <tbody>
+             <tr>
+               <td><%= teacher.userName %>  </td>
+               <td><%= teacher.userEmail %> </td>
+               <td><%= teacher.userContactNo %> </td>
+               <td><%= teacher.userDomain %> </td>
+               <td><%= teacher.userteacherID %> </td>
+             </tr>
+         </tbody>
+       </table>
+        </div>
+
+</body>
+</html>
